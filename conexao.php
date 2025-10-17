@@ -1,5 +1,5 @@
 <?php 
-define('HOST', ''); 
+define('HOST', '');
 define('USUARIO', '');
 define('SENHA','');
 define('DB', '');

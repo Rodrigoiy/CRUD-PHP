@@ -19,7 +19,8 @@ require 'conexao.php';
         <h4 class="text-xl font-semibold text-gray-800">
           Lista de Usuários
         </h4>
-        <a href="usuarios-create.php"
+        <!-- usuario-create -->
+        <a href="usuario-create.php"
            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
           Adicionar Usuário
         </a>
