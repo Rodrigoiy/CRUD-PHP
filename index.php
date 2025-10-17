@@ -1,7 +1,7 @@
 <?php 
+session_start();
 require 'conexao.php';
 ?>
-
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -14,6 +14,7 @@ require 'conexao.php';
   <?php include('navbar.php'); ?>
 
   <div class="container mx-auto px-4 mt-6">
+    <?php include('mensagem.php') ?> 
     <div class="bg-white rounded-2xl shadow-md">
       <div class="flex items-center justify-between border-b border-gray-200 px-6 py-4">
         <h4 class="text-xl font-semibold text-gray-800">
@@ -39,6 +40,9 @@ require 'conexao.php';
           </thead>
           <tbody class="text-gray-800">
             <tr class="hover:bg-gray-50 transition">
+
+            <!-- USUÁRIO DE TESTE (logo será removido) --> 
+
               <td class="px-4 py-3 border-b">1</td>
               <td class="px-4 py-3 border-b">teste</td>
               <td class="px-4 py-3 border-b">teste@gmail.com</td>
