@@ -39,16 +39,20 @@ require 'conexao.php';
             </tr>
           </thead>
           <tbody class="text-gray-800">
+            <?php 
+            $sql = 'SELECT * FROM usuarios';
+            $usuarios = mysqli_query($conexao, $sql);
+            if (mysqli_num_rows($usuarios) > 0) {
+              foreach($usuarios as $usuario) {
+            ?>
             <tr class="hover:bg-gray-50 transition">
 
-            <!-- USUÁRIO DE TESTE (logo será removido) --> 
-
-              <td class="px-4 py-3 border-b">1</td>
-              <td class="px-4 py-3 border-b">teste</td>
-              <td class="px-4 py-3 border-b">teste@gmail.com</td>
-              <td class="px-4 py-3 border-b">01/01/2010</td>
+              <td class="px-4 py-3 border-b"><?=$usuario['id']?></td>
+              <td class="px-4 py-3 border-b"><?=$usuario['nome']?></td>
+              <td class="px-4 py-3 border-b"><?=$usuario['email']?></td>
+              <td class="px-4 py-3 border-b"><?=date('d/m/Y', strtotime($usuario['data_nascimento']))?></td>
               <td class="px-4 py-3 border-b text-center space-x-2">
-                <a href="#" class="bg-gray-600 hover:bg-gray-700 text-white px-5 py-2 rounded text-sm transition">
+                <a href="usuario-view.php?id=<?=$usuario['id']?>" class="bg-gray-600 hover:bg-gray-700 text-white px-5 py-2 rounded text-sm transition">
                   Visualizar
                 </a>
                 <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded text-sm transition">
@@ -62,6 +66,12 @@ require 'conexao.php';
                 </form>
               </td>
             </tr>
+            <?php 
+              }
+            }else{
+              echo '<h5> nenhum usuário encontrado</h5>';
+            }
+            ?>
           </tbody>
         </table>
       </div>
